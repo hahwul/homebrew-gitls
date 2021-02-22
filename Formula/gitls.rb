@@ -5,24 +5,24 @@
 class Gitls < Formula
   desc "Listing git repository from URL/User/Org"
   homepage "https://github.com/hahwul/gitls"
-  version "1.0.1"
+  version "1.0.2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.1/gitls_1.0.1_darwin_amd64.tar.gz"
-    sha256 "7d5072e08308ecb3943e83d2a60410fefa28dd1b5102d6cb080797749de0758d"
+    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_darwin_amd64.tar.gz"
+    sha256 "a3ecffdf5f449a83787b2e77fd157eabb019e49eb799f7e5711a73ac26fe641f"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.1/gitls_1.0.1_linux_amd64.tar.gz"
-    sha256 "82e90c718c56998ca4f6233f27401a36c6204b68ca230de6fe3d04d04c70783c"
+    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_linux_amd64.tar.gz"
+    sha256 "5f465740550e392f96d7e50e2e30b2838409ddd4f820c1bc2261cb7705eec911"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.1/gitls_1.0.1_linux_armv6.tar.gz"
-    sha256 "63c4da1f33ea430dd29a53323b381b4cda54883044246225bc59c58652725001"
+    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_linux_armv6.tar.gz"
+    sha256 "8ed8630e1176ec28867f214b589d393e82b84d0ce1b7d7c5270ba6649d5b3863"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.1/gitls_1.0.1_linux_arm64.tar.gz"
-    sha256 "6ee60fb9018da1c96714477edc40f14659af730121470ec90052f023b1bce6c3"
+    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_linux_arm64.tar.gz"
+    sha256 "fc54351d892e5f53353826ac10ea30d2e51e0f9db7590b8836f64e87a88d4b4d"
   end
 
   def install
