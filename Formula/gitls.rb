@@ -5,28 +5,52 @@
 class Gitls < Formula
   desc "Listing git repository from URL/User/Org"
   homepage "https://github.com/hahwul/gitls"
-  version "1.0.2"
-  bottle :unneeded
+  version "1.0.3"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_darwin_amd64.tar.gz"
-    sha256 "a3ecffdf5f449a83787b2e77fd157eabb019e49eb799f7e5711a73ac26fe641f"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_linux_amd64.tar.gz"
-    sha256 "5f465740550e392f96d7e50e2e30b2838409ddd4f820c1bc2261cb7705eec911"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_linux_armv6.tar.gz"
-    sha256 "8ed8630e1176ec28867f214b589d393e82b84d0ce1b7d7c5270ba6649d5b3863"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hahwul/gitls/releases/download/v1.0.2/gitls_1.0.2_linux_arm64.tar.gz"
-    sha256 "fc54351d892e5f53353826ac10ea30d2e51e0f9db7590b8836f64e87a88d4b4d"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_darwin_amd64.tar.gz"
+      sha256 "5da8caf312abb22ee606e8cbf617335ab92865bee59463674cca44f2ef6172e7"
+
+      def install
+        bin.install "gitls"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_darwin_arm64.tar.gz"
+      sha256 "b6a6253f0a5e2c22026a9f25e5561fd714c22b73ecc9f888f3bd471816bd0e32"
+
+      def install
+        bin.install "gitls"
+      end
+    end
   end
 
-  def install
-    bin.install "gitls"
+  on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_linux_armv6.tar.gz"
+      sha256 "a32210ceecf65ad85b16902b13f1b78a1fc9e7177bcdfecf963e7740bed665eb"
+
+      def install
+        bin.install "gitls"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_linux_arm64.tar.gz"
+      sha256 "35165ca26286ee8b0f983b3ad5ccf427bda93ee32615e9953eb4cde4fa617497"
+
+      def install
+        bin.install "gitls"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_linux_amd64.tar.gz"
+      sha256 "1aaa18be7d8b5db0fb88b00140e11b264cf2f2b4cdcbaf7e1030405092268d48"
+
+      def install
+        bin.install "gitls"
+      end
+    end
   end
 
   test do
