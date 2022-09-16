@@ -5,20 +5,20 @@
 class Gitls < Formula
   desc "Listing git repository from URL/User/Org"
   homepage "https://github.com/hahwul/gitls"
-  version "1.0.3"
+  version "1.0.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_darwin_amd64.tar.gz"
-      sha256 "5da8caf312abb22ee606e8cbf617335ab92865bee59463674cca44f2ef6172e7"
+    if Hardware::CPU.arm?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.4/gitls_1.0.4_darwin_arm64.tar.gz"
+      sha256 "5a33ca581f43b315f4109ea7c9b244e7e7d1cabc77ccb4d63db6d8bdddedfe12"
 
       def install
         bin.install "gitls"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_darwin_arm64.tar.gz"
-      sha256 "b6a6253f0a5e2c22026a9f25e5561fd714c22b73ecc9f888f3bd471816bd0e32"
+    if Hardware::CPU.intel?
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.4/gitls_1.0.4_darwin_amd64.tar.gz"
+      sha256 "ef781d974a16c19f69997992167b6057331ae06d56e21c8f6a21a48995deb93f"
 
       def install
         bin.install "gitls"
@@ -28,24 +28,24 @@ class Gitls < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_linux_armv6.tar.gz"
-      sha256 "a32210ceecf65ad85b16902b13f1b78a1fc9e7177bcdfecf963e7740bed665eb"
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.4/gitls_1.0.4_linux_armv6.tar.gz"
+      sha256 "2715bc4daa79c90669dca313ac9dad67aad8116b1fd2aed563aeab12c9a00770"
 
       def install
         bin.install "gitls"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_linux_arm64.tar.gz"
-      sha256 "35165ca26286ee8b0f983b3ad5ccf427bda93ee32615e9953eb4cde4fa617497"
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.4/gitls_1.0.4_linux_arm64.tar.gz"
+      sha256 "5d34790a363e1158b754cf47f5c2900f0a2991c839bb959e33947b694386902e"
 
       def install
         bin.install "gitls"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hahwul/gitls/releases/download/v1.0.3/gitls_1.0.3_linux_amd64.tar.gz"
-      sha256 "1aaa18be7d8b5db0fb88b00140e11b264cf2f2b4cdcbaf7e1030405092268d48"
+      url "https://github.com/hahwul/gitls/releases/download/v1.0.4/gitls_1.0.4_linux_amd64.tar.gz"
+      sha256 "73e19d4f53ce77bf0ca0561b338d3a122c485cae44bd79fe50f18407b63087fd"
 
       def install
         bin.install "gitls"
